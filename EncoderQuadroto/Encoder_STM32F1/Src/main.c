@@ -101,9 +101,9 @@ int main(void)
 	HAL_TIM_Base_Start(&htim3);
 	HAL_TIM_Base_Start(&htim1);
 	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
-	
+//	htim1.Instance->CCR1=1500;
 	__HAL_TIM_SetCompare(&htim1,TIM_CHANNEL_1,1999);
-	HAL_Delay(5000);
+	HAL_Delay(2000);
 	__HAL_TIM_SetCompare(&htim1,TIM_CHANNEL_1,999);
 	duty = 1000;
 	dem = 0;
@@ -114,7 +114,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-		
+//		__HAL_TIM_SetCompare(&htim1,TIM_CHANNEL_1,1500);
+//		htim1.Instance->CCR1=1500;
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
